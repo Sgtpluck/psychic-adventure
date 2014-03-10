@@ -12,13 +12,32 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 });
 
+Ember.TEMPLATES["cart"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '';
+
+
+  return buffer;
+  
+});
+
 Ember.TEMPLATES["home"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
   
+  
+  data.buffer.push(" GIT YR FUTURES HERE ");
+  }
 
-
-  data.buffer.push("<h1> GIT YR FUTURES HERE </h1>");
+  data.buffer.push("<h1>");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "products", options) : helperMissing.call(depth0, "link-to", "products", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</h1>");
+  return buffer;
   
 });
 
@@ -38,7 +57,9 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(" width=\"800px\" height=\"600px\" class='thumbnail col-lg-12' />\n  </div>\n  <div class='col-lg-4'>\n    ");
   stack1 = helpers._triageMustache.call(depth0, "description", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </div>\n</div>");
+  data.buffer.push("<br><br>\n    <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "add_to_cart", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Add To Cart!</button>\n  </div>\n</div>");
   return buffer;
   
 });
@@ -73,7 +94,7 @@ function program2(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<h1>All my products!</h1>\n<div class='row'>\n  <div class='col-lg-2'>\n    <h4>All Products</h4>\n     <ul class='list-unstyled'>\n      ");
+  data.buffer.push("\n<div class='row'>\n  <div class='col-lg-2'>\n    <h4>All Products</h4>\n     <ul class='list-unstyled'>\n      ");
   stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    </ul>\n  </div>\n  <div class='col-lg-10'>\n   ");

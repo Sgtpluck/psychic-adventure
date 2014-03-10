@@ -7,6 +7,7 @@
     <img {{ bind-attr src=image }} width="800px" height="600px" class='thumbnail col-lg-12' />
   </div>
   <div class='col-lg-4'>
-    {{ description }}
+    {{ description }}<br><br>
+    <button {{action 'add_to_cart'}}>Add To Cart!</button>
   </div>
 </div>
