@@ -1,4 +1,10 @@
 App.Cart = DS.Model.extend({
-  products: DS.hasMany('products'),
-  subtotal: DS.attr("integer")
+  items: DS.hasMany('items', {async: true }),
 });
+
+App.Cart.FIXTURES = [
+  {
+    id: 1,
+    items: [1]
+  }
+]
