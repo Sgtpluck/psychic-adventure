@@ -23,21 +23,33 @@ function program1(depth0,data) {
 Ember.TEMPLATES["cart"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1;
+  var buffer = '', stack1, helper, options;
   data.buffer.push("\n  <h3>");
   stack1 = helpers._triageMustache.call(depth0, "product.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h3>\n  <br>\n");
+  data.buffer.push("</h3>\n      ");
+  stack1 = helpers._triageMustache.call(depth0, "quantity", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<br>\n    <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "more", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">+</button>\n    <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "less", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">-</button>\n    <p>Price: $");
+  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "product.price", options) : helperMissing.call(depth0, "format-price", "product.price", options))));
+  data.buffer.push("</p>\n    <p>Subtotal: $");
+  data.buffer.push(escapeExpression((helper = helpers.subtotal || (depth0 && depth0.subtotal),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "product.price", "quantity", options) : helperMissing.call(depth0, "subtotal", "product.price", "quantity", options))));
+  data.buffer.push("\n  <br>\n");
   return buffer;
   }
 
-  data.buffer.push("HERE IS YOUR CART.<br>\n");
+  data.buffer.push("HERE IS YOUR CART.<br>\n\n");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\nSubtotal! ");
   return buffer;
   
 });

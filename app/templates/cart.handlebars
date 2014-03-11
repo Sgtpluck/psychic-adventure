@@ -1,5 +1,12 @@
 HERE IS YOUR CART.<br>
+
 {{# each items }}
   <h3>{{ this.product.name }}</h3>
+      {{ this.quantity}}<br>
+    <button {{ action "more" this }}>+</button>
+    <button {{ action "less" this }}>-</button>
+    <p>Price: ${{ format-price this.product.price }}</p>
+    <p>Subtotal: ${{ subtotal(this.product.price, this.quantity) }}
   <br>
 {{/ each }}
+Subtotal! 
