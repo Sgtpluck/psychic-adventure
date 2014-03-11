@@ -1,6 +1,14 @@
 App.Cart = DS.Model.extend({
   items: DS.hasMany("item", { async: true })
   });
+
+App.Cart.FIXTURES = [
+  {
+    id:     1,
+    items: [1, 2]
+  }
+]
+
 //   subtotal: function() {
 //     var subtotal = 0;
 
@@ -19,10 +27,3 @@ App.Cart = DS.Model.extend({
     //   console.log(item);
     //   subtotal += item.quantity * item.current_price;
     // }
-
-App.Cart.FIXTURES = [
-  {
-    id:     1,
-    items: [1, 2]
-  }
-]

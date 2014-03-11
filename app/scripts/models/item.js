@@ -1,6 +1,6 @@
 App.Item = DS.Model.extend({
   product: DS.belongsTo('product', {async: true }),
-  quantity: DS.attr("integer")
+  quantity: DS.attr("number")
 });
 
 App.Item.FIXTURES = [
