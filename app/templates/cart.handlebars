@@ -6,7 +6,7 @@ HERE IS YOUR CART.<br>
     <button {{ action "more" this }}>+</button>
     <button {{ action "less" this }}>-</button>
     <p>Price: ${{ format-price this.product.price }}</p>
-    <p>Subtotal: ${{ subtotal(this.product.price, this.quantity) }}
+    <p>Subtotal: ${{ subtotal(this.product.price, this.quantity) }}</p>
   <br>
 {{/ each }}
 Subtotal! 
