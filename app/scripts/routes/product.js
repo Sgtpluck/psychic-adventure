@@ -6,6 +6,7 @@ App.ProductRoute = Ember.Route.extend({
       newItem.save();
       console.log(newItem)
       theCart.get("items").then(function(items) {
+        
         items.pushObject(newItem);
       }
     )}

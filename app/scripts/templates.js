@@ -9,10 +9,10 @@ function program1(depth0,data) {
   data.buffer.push(" Cart! ");
   }
 
-  data.buffer.push("<div class='container'>\n  <h1>PSYCHE!</h1>\n  <p class='lead'>Top-rated predictions at discount prices!</p>\n  ");
+  data.buffer.push("<div class='container'>\n  <h1>ePSYCH!</h1>\n  <p class='lead'>Top-rated predictions at discount prices! ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "cart", options) : helperMissing.call(depth0, "link-to", "cart", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  <hr>\n  ");
+  data.buffer.push("</p>\n  \n  <hr>\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  \n  <div class='text-muted'><small>Foot</small></div>\n</div>\n");
@@ -23,7 +23,7 @@ function program1(depth0,data) {
 Ember.TEMPLATES["cart"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
 
 function program1(depth0,data) {
   
@@ -41,15 +41,16 @@ function program1(depth0,data) {
   data.buffer.push(">-</button>\n    <p>Price: $");
   data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "product.price", options) : helperMissing.call(depth0, "format-price", "product.price", options))));
   data.buffer.push("</p>\n    <p>Subtotal: $");
-  data.buffer.push(escapeExpression((helper = helpers.subtotal || (depth0 && depth0.subtotal),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "product.price", "quantity", options) : helperMissing.call(depth0, "subtotal", "product.price", "quantity", options))));
-  data.buffer.push("\n  <br>\n");
+  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "format-price", "subtotal", options))));
+  data.buffer.push("\n\n  <br>\n");
   return buffer;
   }
 
   data.buffer.push("HERE IS YOUR CART.<br>\n\n");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\nSubtotal! ");
+  data.buffer.push("\n\nYour order's total:\n$");
+  data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "total", options) : helperMissing.call(depth0, "format-price", "total", options))));
   return buffer;
   
 });
