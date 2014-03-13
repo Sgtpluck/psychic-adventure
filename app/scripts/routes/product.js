@@ -8,7 +8,7 @@ App.ProductRoute = Ember.Route.extend({
       theCart.get("items").then(function(items) { 
         items.pushObject(newItem);
       }
-    )}
+    )},
   },
   model: function (params) {
     return this.store.find("product", params.product_id);
