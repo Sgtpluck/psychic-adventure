@@ -1,3 +1,3 @@
-App.HomeRoute = Ember.Route.extend({
+App.ItemRoute = Ember.Route.extend({
 
 });

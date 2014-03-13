@@ -1,12 +1,12 @@
 HERE IS YOUR CART.<br>
 
 {{# each items }}
-  <h3>{{ this.product.name }}</h3>
-      {{ this.quantity}}<br>
-    <button {{ action "more" this }}>+</button>
-    <button {{ action "less" this }}>-</button>
+  <h3>Product: {{ this.product.name }}</h3>
+      Quantity: {{ this.quantity}} 
+      <button {{ action "more" this }}>+</button> 
+      <button {{ action "less" this }}>-</button>
     <p>Price: ${{ format-price this.product.price }}</p>
-    <p>Subtotal: ${{ format-price this.subtotal }}
+    <p>Item Subtotal: ${{ format-price this.subtotal }}</p>
 
   <br>
 {{/ each }}
