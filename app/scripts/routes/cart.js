@@ -4,7 +4,9 @@ App.CartRoute = Ember.Route.extend({
       item.incrementProperty("quantity");
     },
     less: function (item) {
-      item.decrementProperty('quantity');   
+      if (item.get('quantity') > 0) {
+        item.decrementProperty('quantity');  
+      } 
     }
   },
   model: function (params) {
