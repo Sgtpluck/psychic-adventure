@@ -11,12 +11,15 @@ App.ProductNewRoute = Ember.Route.extend({
   },
   actions: {
     createProduct: function (proxy) {
-      newProduct = proxy.set('content', {
-        name: proxy.name, 
-        description: proxy.description,
-        price: proxy.price
-      });
+      newProduct = this.store.createRecord("product", {
+          name: proxy.get('name'),
+          description: proxy.get('description'),
+          price: proxy.get('price'),
+          avatar: proxy.get('avatar'),
+          image: proxy.get('image')
+        })
       newProduct.save;
+      this.transitionTo("admin");
     }
   }
 });
