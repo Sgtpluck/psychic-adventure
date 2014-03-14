@@ -6,6 +6,7 @@ This is your admin dashboard!
     <h4>All Products</h4>
      <ul class='list-unstyled'>
       {{# each }}
+      {{# if this.name }}
       <button {{ action 'deleteProduct' this }}>Delete this product</button>
       <li> {{# link-to "productEdit" this }}
         {{ name }} ${{ format-price price }} <br>
@@ -13,6 +14,7 @@ This is your admin dashboard!
          {{/ link-to }}
       <br>
       </li>
+      {{/ if }}
       {{/ each }}
     </ul>
   </div>
