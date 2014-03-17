@@ -14,8 +14,7 @@ App.Cart = DS.Model.extend({
 
 App.Cart.FIXTURES = [
   {
-    id:     "fixture-0",
-    items: [1, 2]  }
+    id:     "fixture-0" }
 ]
 
 //   subtotal: function() {
