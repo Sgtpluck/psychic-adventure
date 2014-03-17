@@ -4,6 +4,8 @@ App.Router.map(function(){
     this.resource("productNew", {path: "products/new"} )
   });
   this.resource("cart");
+  this.resource("order");
+  this.resource("confirmation");
   this.resource("products", { path: "/" }, function () {
     this.resource("product", { path: ":product_id" });
   });

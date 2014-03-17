@@ -1,0 +1,17 @@
+THIS IS YOUR ORDER
+<br><br>
+Your name: {{input type='text' value = customerName }}
+<br><br>
+Your email: {{ input type='text' value = email }}
+<br><br>
+Your Credit Card number: {{ input type='text' value = creditcard }}
+<br><br>
+Your card's CVV: {{ input type='text' value = cvv}}
+<br><br>
+Your card's expiration date: {{ input type='text' value = expDate }}
+<br><br>
+Your zip: {{ input type='text' value = zip }}
+<br><br>
+We're sure you want this order. Are you?
+<br><br>
+ <button {{ action 'submitBilling' this }}>Buy!</button>
