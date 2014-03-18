@@ -12,10 +12,7 @@ App.Cart = DS.Model.extend({
   }.property('items.@each.subtotal')
 });
 
-App.Cart.FIXTURES = [
-  {
-    id:     "fixture-0" }
-]
+
 
 //   subtotal: function() {
 //     var subtotal = 0;

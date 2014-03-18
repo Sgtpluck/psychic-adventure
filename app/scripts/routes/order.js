@@ -6,10 +6,10 @@ App.OrderRoute = Ember.Route.extend({
       order.save().then(
         function (order) {
         self.transitionTo('confirmation', order);
+        localStorage.removeItem("cartId");
       }, 
       function (error) {
-        order.deleteRecord()
-        alert(error.responseText);
+        alert('There was a problem processing your order');
       })
     }
   },

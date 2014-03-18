@@ -149,9 +149,13 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1;
 
 
-  data.buffer.push("THIS IS CONFIRMED\nTHANKS ");
+  data.buffer.push("THIS IS CONFIRMED\n<br>\nTHANKS ");
   stack1 = helpers._triageMustache.call(depth0, "customerName", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(".\n<br>\nYour order number is ");
+  stack1 = helpers._triageMustache.call(depth0, "id", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n<br>\nYou should receive an email with this number and other details.\n");
   return buffer;
   
 });
@@ -213,7 +217,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   },hashTypes:{'type': "STRING",'value': "ID"},hashContexts:{'type': depth0,'value': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n<br><br>\nWe're sure you want this order. Are you?\n<br><br>\n <button ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "submitBilling", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
-  data.buffer.push(">Buy!</button>");
+  data.buffer.push(">Purchase!</button>");
   return buffer;
   
 });
