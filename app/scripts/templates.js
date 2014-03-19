@@ -121,7 +121,9 @@ function program1(depth0,data) {
   data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "product.price", options) : helperMissing.call(depth0, "format-price", "product.price", options))));
   data.buffer.push("</p>\n    <p>Item Subtotal: $");
   data.buffer.push(escapeExpression((helper = helpers['format-price'] || (depth0 && depth0['format-price']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "subtotal", options) : helperMissing.call(depth0, "format-price", "subtotal", options))));
-  data.buffer.push("</p>\n\n  <br>\n");
+  data.buffer.push("</p>\n    <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeFromCart", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(">Remove item! </button>\n\n  <br>\n");
   return buffer;
   }
 
