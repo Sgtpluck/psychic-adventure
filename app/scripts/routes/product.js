@@ -8,7 +8,7 @@ App.ProductRoute = Ember.Route.extend({
                                 quantity: 1,
                                 currentPrice: unique_prod.get('price')
                               });
-      newItem.save().then(function (theCart, newItem) {
+      newItem.save().then(function () {
         theCart.get("items").then(function(items) {
           items.pushObject(newItem);
         });
