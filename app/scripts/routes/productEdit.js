@@ -1,7 +1,8 @@
 App.ProductEditRoute = Ember.Route.extend({
   actions: {
     saveProduct: function (product) {
-      product.save();
+      product.save()
+      this.transitionTo('admin')
     }
   },
   model: function (params) {
