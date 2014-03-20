@@ -19,8 +19,8 @@ App.ProductRoute = Ember.Route.extend({
             currentPrice: unique_prod.get('price')
           });
           theCart.get("items").pushObject(item);
-          item.save();
-        }
+          item.save;
+          }
       })
     },
   },
