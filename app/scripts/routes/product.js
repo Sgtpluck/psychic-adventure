@@ -10,6 +10,7 @@ App.ProductRoute = Ember.Route.extend({
       }).then(function (item) {
         if (item) {
           item.incrementProperty("quantity");
+          item.set("cart", theCart);
           item.save();
         } else {
           var item = store.createRecord('item', {
@@ -18,10 +19,11 @@ App.ProductRoute = Ember.Route.extend({
             quantity: 1,
             currentPrice: unique_prod.get('price')
           });
-          theCart.get("items").pushObject(item);
-          item.save;
+          item.save().then( function() {
+            theCart.get("items").pushObject(item)
+          });
           }
-      })
+      });
     },
   },
   model: function (params) {
