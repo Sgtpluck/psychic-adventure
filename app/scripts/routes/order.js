@@ -11,7 +11,6 @@ App.OrderRoute = Ember.Route.extend({
           var cart = self.store.createRecord("cart");
           cart.save().then(function (cart) {
             localStorage.cartId = cart.id;
-            debugger
          });
        });
       },
