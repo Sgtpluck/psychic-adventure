@@ -8,11 +8,11 @@ App.CartRoute = Ember.Route.extend({
       })
     },
     less: function (item) {
-      // fix this
       this.controllerFor("application").get("cart").then ( function (cart) {
         if (item.get('quantity') > 1) {
           item.decrementProperty('quantity');
           item.set("cart", cart);
+          item.save();
         }
         else {
           item.deleteRecord()
