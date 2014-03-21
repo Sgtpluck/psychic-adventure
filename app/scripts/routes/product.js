@@ -2,7 +2,7 @@ App.ProductRoute = Ember.Route.extend({
   actions: {
     addToCart: function(unique_prod) {
       var store = this.store
-      var theCart = this.modelFor("application");
+      this.controllerFor("application").get("cart").then ( function (theCart) {
       theCart.get("items").then(function (items) {
         return items.find(function (item) {
           return item.get("product").get("id") == unique_prod.get("id")
@@ -19,11 +19,13 @@ App.ProductRoute = Ember.Route.extend({
             quantity: 1,
             currentPrice: unique_prod.get('price')
           });
-          item.save().then( function() {
-            theCart.get("items").pushObject(item)
-          });
+          theCart.get("items").pushObject(item)
+          item.save();
           }
+        });
+      
       });
+      this.transitionTo("cart");
     },
   },
   model: function (params) {
