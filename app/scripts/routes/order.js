@@ -10,7 +10,7 @@ App.OrderRoute = Ember.Route.extend({
           var cart = self.store.createRecord("cart");
           cart.save().then( function (cart) {
             localStorage.cartId = cart.id;
-          self.controllerFor("application").set("cart", self.store.find("cart", localStorage.cartId))
+            self.controllerFor("application").set("cart", self.store.find("cart", localStorage.cartId));
              })
           self.transitionTo('confirmation', order)
         });

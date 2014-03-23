@@ -6,12 +6,6 @@ App.Order = DS.Model.extend({
   cvv:           DS.attr("string"),
   zip:           DS.attr("string"),
   expDate:       DS.attr("string"),
-  cart:          DS.belongsTo("cart", {async: true})
+  cart:          DS.belongsTo("cart", {async: true}),
+  createdAt:     DS.attr("date")
 });
-
-App.Order.FIXTURES = [
-  {
-    id: 1,
-    cart: 1
-  }
-];
