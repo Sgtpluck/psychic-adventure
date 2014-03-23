@@ -4,7 +4,7 @@ App.Router.map(function(){
     this.resource("productNew", {path: "products/new"} );
   });
   this.resource('adminOrders', { path: 'admin/orders'}, function() {
-    this.resource("manageOrders", { path: 'admin/orders/:order_id' } );
+    this.resource("manageOrders", { path: ':order_id' } );
   });
   this.resource("cart");
   this.resource("order");

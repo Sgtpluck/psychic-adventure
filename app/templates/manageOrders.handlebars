@@ -1,0 +1,18 @@
+<h1>
+  Order {{ id }} 
+</h1>
+
+<div class='row'>
+  <div class='col-lg-8'>
+    Customer Name: {{ customerName }}<br>
+    Email: {{ email }}<br>
+    Credit Card: **** **** **** {{ creditcard }}<br>
+    Expiration Date: {{ expDate }} <br>
+    Zip: {{ zip }}<br>
+    Status: {{ status }} 
+    <br>
+    <button {{action 'markAsPaid' this}} class="update">Update Status</button><br>
+    <button {{action 'cancel' this }}>Cancel this order!</button>
+
+  </div>
+</div>

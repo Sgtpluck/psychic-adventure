@@ -6,8 +6,11 @@ Here's all the orders you can manage!
      <ul class='list-unstyled'>
       {{# each }}
       <li> 
-      Order number: {{ id }}
-      Order status: {{ status }}
+      {{# link-to 'manageOrders' this }}
+      Order number: {{ id }}<br>
+      status: {{ status }}
+      {{/ link-to }}
+      <hr>
       <br>
       </li>
       {{/ each }}
